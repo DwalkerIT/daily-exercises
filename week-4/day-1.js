@@ -12,37 +12,45 @@ let book = {
 //object "book" and set it to o1
 //format name as "Dan Brown"
 
- let o1 = book[0].author;
- // or ?
-// let o1 = `${book[0].author.firstName}/${book[0].author.lastName}`;
+// let o1 = book[0].author;
+// or ?
+let o1 = `${book[0].author.firstName}/${book[0].author.lastName}`;
 
 console.assert(o1 == "Dan Brown");
 
 //Q2
 //set o2 to the number of genres the object "book" has
-let o2 = book[0].genre.length;
+let o2 = book.genre.length;
 
 console.assert(o2 == 3);
 
 //Q3
 //use a method that checks if the object "book" has a genre of
 //"Mystery" if so, return true
-let o3 = book[0].genre
-if {book[0].genre = "mystery"
-return true;
-} else
-return false
+let o3 = book.genre.includes("mystery");
+
+// if {book.genre = "mystery"
+// return true;
+//} else
+// return false
 console.assert(o3 == true);
 
 //Q4
 //set o4 to a function that checks if the object "book" is released
 //after 2012, if so have it return true
-let o4 = book[0].release;
-if {
-  book[0].release => 2012
-  return true
-} else
-return false
+
+let o4 = function (obj) {
+  if ((obj, release > 2012)) {
+    return true;
+  } else return false;
+};
+
+// let o4 = book[0].release;
+// if {
+//   book[0].release => 2012
+//   return true
+// } else
+// return false
 
 console.assert(o4(book) == true);
 
@@ -50,6 +58,15 @@ console.assert(o4(book) == true);
 //set o5 to a function that returns the number of keys
 //found in the object "book"
 //hint: for in loop
-let o5;
+let o5 = function (obj) {
+  let keyCount = 0;
+  for (let key in obj) {
+    keyCount++;
+  }
+  console.log(keyCount);
+  return keyCount;
+  // for in - objects
+  //for of - arrays
+};
 
 console.assert(o5(book) == 6);
